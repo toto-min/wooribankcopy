@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="./bxslider-4-4.2.12/dist/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="./bxslider-4-4.2.12/dist/jquery.bxslider.min.js"></script>
+    <link rel="stylesheet" href="./woori.css">
+    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
+    <style>
+        
+        element.style {
+        max-width: 100%;
+        }
+        .bx-wrapper {
+        max-width: 100%;
+        height: 100%;
+        box-shadow: 0 0 0;
+        border: 0px solid;
+        position: relative;
+        }
+        .bx-wrapper img {
+        max-width: 980px;
+        display: block;
+        margin: 0 auto;
+        }
+        .bx-wrapper .bx-pager,
+        .bx-wrapper .bx-controls-auto,
+        .bx-wrapper .bx-prev,
+        .bx-wrapper .bx-next
+         {
+        position: absolute;
+        bottom: 80px;
+        z-index: 999;
+        left: 40%;
+        }
+        .bx-pager{
+            left: 40%;
+        }
+        .bx-wrapper .bx-pager.bx-default-pager a {        
+
+        width: 8px;
+        height: 8px;
+        margin: 0 7px;
+        }
+        .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+        right:unset;
+        transform: translateX(130px);
+        width: 50px;
+        z-index: 9999;
+        }
+        .bx-wrapper .bx-controls-direction a {
+        position: absolute;
+        top: unset;
+        bottom: 80px;
+        margin-top: 0px;
+        width: 15px;
+        height: 15px;
+        z-index: 9999;
+        }
+        .bx-wrapper .bx-controls-auto{
+            z-index: 9999;
+        }
+        .bx-wrapper .bx-prev {
+        width: 10px;
+        height: 10px;
+        transform: translateX(180px);
+        background: url('https://simg.wooribank.com/img/intro/home/slides_btn_previous_new0924.png') no-repeat 0 0;
+        background-size: 15px 15px;
+        }
+        .bx-wrapper .bx-next {
+        right: unset;
+        transform: translateX(210px);
+        background: url('https://simg.wooribank.com/img/intro/home/slides_btn_next_new0924.png') no-repeat 0 0;
+        background-size: 15px 15px;
+        }
+        /* hover */
+        .bx-wrapper .bx-pager.bx-default-pager a:hover,
+        .bx-wrapper .bx-pager.bx-default-pager a:focus {
+        background: #666;
+        }
+        .bx-wrapper .bx-pager.bx-default-pager a.active{
+            background: #000;
+        }
+        .bx-wrapper .bx-prev:hover,
+        .bx-wrapper .bx-prev:focus {
+        background-position: unset;
+        }
+        .bx-wrapper .bx-next:hover,
+        .bx-wrapper .bx-next:focus {
+        background-position: unset;
+        }
+    </style>
+
+</head>
+<body>
+        <div class="moveimg">
+            <div class="bxslider">
+                <div class="bx1"><img src="https://www.wooribank.com/img/intro/home/new_main_banner1127_01.png"></div>
+                <div class="bx2"><img src="https://www.wooribank.com/img/intro/home/new_main_banner0924_04.png"></div>
+                <div class="bx3"><img src="https://www.wooribank.com/img/intro/home/new_main_banner1030_02.png"></div>
+                <div class="bx4"><img src="https://www.wooribank.com/img/intro/home/new_main_banner0926_03.png"></div>
+                <div class="bx5"><img src="https://www.wooribank.com/img/intro/home/new_main_banner0924_05.png"></div>
+                <div class="bx6"><img src="https://www.wooribank.com/img/intro/home/new_main_banner0924_06.png"></div>
+              </div>
+        </div>
+    <header>
+        <div class="top">
+            <div id="fir">
+                <div class="woori">
+                    <img src="https://simg.wooribank.com/img/intro/header/h1_01.png" alt="">
+                </div>
+                <div class="login">
+                    <div class="loginP">
+                        <p>
+                        로그인
+                        </p>
+                    </div>
+                    <span class="loginhov">
+                        <a href="#">개인</a>
+                        <a href="#">기업</a>
+                    </span>
+                </div>
+                <div class="center">
+                    <div class="centerP">
+                        <p>
+                        공인인증센터
+                        </p>
+                    </div>
+                    <span class="centerhov">
+                        <a href="#">개인</a>
+                        <a href="#">기업</a>
+                    </span>
+                </div>
+                
+            </div>
+            <div id="sec">
+                <div id="person">
+                    <a href="#">
+                        <img src="https://simg.wooribank.com/img/intro/header/btn_tit_1_intro_renew.png" alt="">
+                    </a>
+                    <div class="hideList">
+                        <span class="arrow"></span>
+                        <ul class="pList">
+                            <li class="title">
+                                <h3>개인뱅킹</h3>
+                            </li>
+                            <li>
+                                <p>
+                                    조회
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    이체
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    공과금
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    예금/신탁
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    펀드
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    보험
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    대출
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    외환/골드
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    퇴직연금
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    뱅킹관리
+                                </p>
+                            </li>
+                            <li>
+                                <p>
+                                    ISA
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="enter">
+                    <a href="#">
+                    <img src="https://simg.wooribank.com/img/intro/header/btn_tit_2_intro_renew.png" alt="">
+                    </a>
+                    <div class="hideList">
+                            <span class="arrow"></span>
+                            <ul class="pList">
+                                <li class="title">
+                                    <h3>기업뱅킹</h3>
+                                </li>
+                                <li>
+                                    <p>
+                                        조회
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        이체
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        공과금
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        전자결제
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        수표어음
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        자금관리
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        예금/신탁
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        대출
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        펀드/보험
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        외환
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        퇴직연금
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        뱅킹관리
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+                <div id="asset">
+                    <a href="#">
+                        <img src="https://simg.wooribank.com/img/intro/header/btn_tit_3_intro_renew.png" alt="">
+                     </a>
+                    <div class="hideList">
+                            <span class="arrow"></span>
+                            <ul class="pList">
+                                <li class="title">
+                                    <h3>자산관리</h3>
+                                </li>
+                                <li>
+                                    <p>
+                                        로보/전문가설계
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        펀드마켓
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        은퇴설계
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        재무설계
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+                <div id="item">
+                    <a href="#">
+                    <img src="https://simg.wooribank.com/img/intro/header/btn_tit_4_intro_renew.png" alt="">
+                    </a>
+                    <div class="hideList">
+                            <span class="arrow"></span>
+                            <ul class="pList">
+                                <li class="title">
+                                    <h3>금융상품</h3>
+                                </li>
+                                <li>
+                                    <p>
+                                        추천상품
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        예금
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        펀드
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        대출
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        외환
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        골드
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        신탁
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        보험
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        퇴직연금
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        시니어플러스 은퇴설계
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        ISA
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+                <div id="card">
+                    <a href="#">
+                    <img src="https://simg.wooribank.com/img/intro/header/btn_tit_5_intro_renew.png" alt="">
+                    </a>
+                </div>
+            </div>
+            <div id="thr">
+                <div id="menu">
+                    <a href="#">
+                    <img src="https://simg.wooribank.com/img/intro/header/btn_tit_6_intro_renew.png" alt="">
+                    </a>
+                </div>
+                <div id="glo">
+                    <a href="#">
+                    <img src="https://simg.wooribank.com/img/intro/header/btn_tit_7_intro_renew.png" alt="">
+                    </a>
+                    <div class="hideList">
+                            <span class="arrow"></span>
+                            <ul class="pList">
+                                <li class="title">
+                                    <h3>LANGUAGE</h3>
+                                </li>
+                                <li>
+                                    <a href="#" class="english">
+                                        <p>English
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="chines">
+                                        <p>Chinese (中國語 )
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="japanese">
+                                        <p>Japanese (日本語)
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="filipino">
+                                        <p>Filipino (Tagalog)
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="vietnamese">
+                                        <p>Vietnamese (tiếng Việt)
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                <a href="#" class="mongolian">
+                                    <p>Mongolian (Монгол хэл)
+                                    </p>
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                </div>
+                <div id="search">
+                    <a href="#">
+                    <img src="https://simg.wooribank.com/img/intro/header/upper_search_icon.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </header>
+    <nav class="left" id="nav1">
+        <ul class="left">
+            <li class="show">
+                <a href="#">
+                    <img src="https://simg.wooribank.com/img/intro/home/main_mid_menu0923_1.png" alt="">
+                </a>
+            </li>
+            <li class="give">
+                <a href="#">
+                    <img src="https://simg.wooribank.com/img/intro/home/main_mid_menu0923_2.png" alt="">
+                </a>
+            </li>
+            <li class="trans">
+                <a href="#">
+                    <img src="https://simg.wooribank.com/img/intro/home/main_mid_menu0923_3.png" alt="">
+                </a>
+            </li>
+            <li class="qMenu">
+                <a href="#">
+                    <img src="https://simg.wooribank.com/img/intro/home/main_mid_menu0923_4.png" alt="">
+                    <span>
+                        <img src="https://simg.wooribank.com/img/common/etc/bg_btn/btn_q_arrow0919.png" alt="">
+                    </span>
+                </a>
+            </li>
+        </ul>
+        <ul class="right">
+            <li class="mainN">
+                <a href="#">
+                    <span>
+                        <img src="https://simg.wooribank.com/img/common/etc/bg_btn/btn_q_arrow_on0919.png" alt="">
+                    </span>
+                    <img src="https://simg.wooribank.com/img/intro/home/main_mid_menu0923_4.png" alt="">
+              
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    스피드계좌조회
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    고객광장
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    공과금
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    영업점안내
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    뱅킹관리
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    우리카드신청
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="nav2">
+        <ul>
+            <li>
+                <a href="#">금융 소비자 보호</a>
+            </li>
+            <li>
+                <a href="#">보안뉴스</a>
+            </li>
+            <li>
+                <a href="#">상품/약관 공시</a>
+            </li>
+        </ul>
+    </div>
+    <div class="wrap">
+        <section class="se1">
+            <h2>금융상품</h2>
+            <ul class="item">
+                <li>
+                    <ul class="click">
+                        <li class="img1"></li>
+                        <li class="word">
+                            <p>예금</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="click">
+                        <li class="img2"></li>
+                        <li class="word">
+                            <p>대출</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="click">
+                        <li class="img3"></li>
+                        <li class="word">
+                            <p>펀드</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="click">
+                        <li class="img4"></li>
+                        <li class="word">
+                            <p>외환</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="click">
+                        <li class="img5"></li>
+                        <li class="word">
+                            <p>신탁</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="click">
+                        <li class="img6"></li>
+                        <li class="word">
+                            <p>퇴직연금</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="click">
+                        <li class="img7"></li>
+                        <li class="word">
+                            <p>보험</p>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <ul class="click">
+                        <li class="img8"></li>
+                        <li class="word">
+                            <p>ISA</p>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section class="se2">
+            <h2>서비스</h2>
+            <ul>
+                <li class="bank">
+                    <div class="s2Img1 s2"></div>
+                    <div class="s2Word">
+                        <span>우리WON뱅킹</span>
+                        <p>새 시대의 금융을 켜다,
+                        <br>
+                        우리은행 대표 모바일뱅킹 APP</p>
+                    </div>
+                </li>
+                <li class="wonder">
+                    <div class="s2Img2 s2"></div>
+                    <div class="s2Word">
+                        <span>원더랜드(구.위비홈즈)</span>
+                        <p>우리가 만든 
+                        <br>
+                        부동산기반 종합자산관리채널</p>
+                    </div>
+                </li>
+                <li class="smart">
+                    <div class="s2Img3 s2"></div>
+                    <div class="s2Word">
+                        <span>스마트간편신규</span>
+                        <p>직원에게 추천받으신 상품을
+                        <br>
+                        간편하게 가입하세요</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section class="se3">
+            <ul>
+                <li class="list1">
+                    <div class="sub">
+                        <h2>새소식</h2>
+                        <a href="#">
+                            <span>
+                                더보기
+                            </span>
+                        </a>
+                    </div>
+                    <form action="#">
+                        <dl>
+                            <dt class="dt1">
+                                <a href="#" title="[공지]비대면 실명 확인 서비스 일시중단 안내">
+                                    [공지]비대면 실명 확인 서비스 일시중단 안내
+                                </a>
+                                <dd>2019.11.05</dd>
+                            </dt>
+                            <dt class="dt2">
+                                <a href="#" title="[공지]삼성 스마트폰 지문인식 업데이트 안내">
+                                    [공지]삼성 스마트폰 지문인식 업데이트 안내
+                                </a>
+                                <dd>
+                                    2019.10.25
+                                </dd>
+                            </dt>
+                            <dt class="dt3">
+                                <a href="#" title="[공지]『서민형 안심전환대출』 전자약정 신청고객 이용방법 안내">
+                                        [공지]『서민형 안심전환대출』 전자약정 신청고객 이용방법 안내
+                                </a>
+                                <dd>2019.09.30</dd>
+                            </dt>
+                        </dl>
+                    </form>
+                </li>
+                <li class="list2">
+                    <div class="sub">
+                        <h2>이벤트</h2>
+                        <a href="#">
+                            <span>
+                            더보기
+                            </span>
+                        </a>
+                    </div>
+                    <div>
+                            <form action="#">
+                                    <dl>
+                                        <dt class="dt1">
+                                            <a href="#">
+                                                청약저축 가입하고! 푸짐한 선물도 받고!
+                                            </a>
+                                        </dt>
+                                        <dt class="dt2">
+                                            <a href="#">
+                                                우리WON뱅킹 설치하고 다양한 경품 받으세요!
+                                            </a>
+                                        </dt>
+                                        <dt class="dt3">
+                                            <a href="#">
+                                                온국민환전 『온국민 90% 환율우대 이벤트』
+                                            </a>
+                                        </dt>
+                                    </dl>
+                                </form>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <footer>
+        <section class="footerSe">
+            <div class="footwrap">
+                <ul class="service">
+                    <li class="call">
+                        <div>
+                            <p>
+                            대표
+                            </p>
+                            <p class="phon">1588-5000</p>
+                        </div>
+                        <div class="fArrow"></div>
+                        <div class="bg"></div>
+                        <div class="hideList">   
+                            <ul class="pList">
+                                <li class="title">
+                                    <h3>ARS 이용안내</h3>
+                                </li>
+                                <li>
+                                    <div class="leftB">
+                                        <p>
+                                            대표전화
+                                        </p>
+                                    </div>
+                                    <div class="hideright">
+                                        <p>1588-5000 / 1599-5000
+                                        </p>
+                                        <p>
+                                            82-2-2006-5000
+                                            <span class="gray">
+                                                (해외)
+                                            </span>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="leftG">
+                                        <p>
+                                            고객의 말씀
+                                        </p>
+                                    </div>
+                                    <div class="hideright">
+                                        <p>080-365-5000
+                                        </p>
+                                        <p>
+                                            (휴대폰 02-2008-5000)
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="noLine">
+                                    <div class="leftB">
+                                        <p>
+                                            신규상담
+                                        </p>
+                                    </div>
+                                    <div class="hideright">
+                                        <p class="hide_top">
+                                            <span>예적금</span>
+                                            1599-8100
+                                        </p>
+                                        <p class="hide_bottom">
+                                            <span>대출</span>
+                                            1599-8300
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                            <span class="arrow"></span>
+                        </div>
+                    </li>
+                    <li class="etc">
+                        <div>
+                            <p>
+                                기타서비스
+                            </p>
+                        </div> 
+                        <div class="fArrow"></div>
+                        <div class="bg"></div>
+                        <div class="hideList">   
+                                <ul class="pList">
+                                    <li class="title">
+                                        <h3>기타서비스</h3>
+                                    </li>
+                                    <li>
+                                        <ul class="secList">
+                                            <li>
+                                                · 법원환급금조회
+                                            </li>
+                                            <li>
+                                                · 미교부국민주조회
+                                            </li>
+                                            <li>
+                                                · 상조회사예치금조회
+                                            </li>
+                                            <li>
+                                                · 예금잔액증명서발급조회
+                                            </li>
+                                            <li>
+                                                · 지급보증서발급조회
+                                            </li>
+                                            <li>
+                                                · 서울시예치금내역조회
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <span class="arrow"></span>
+                            </div>
+                    </li>
+                    <li class="lang">
+                        <div>
+                            <p>
+                                LANGUAGE
+                            </p>
+                        </div>
+                        <div class="fArrow"></div>
+                        <div class="bg"></div>
+                        <div class="hideList">
+                                <ul class="pList">
+                                    <li class="title">
+                                        <h3>LANGUAGE</h3>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="english">
+                                            <p>English
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="chines">
+                                            <p>中國語
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="japanese">
+                                            <p>日本語
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="filipino">
+                                            <p>Tagalog
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="vietnamese">
+                                            <p>tiếng Việt
+                                            </p>
+                                        </a>
+                                    </li>
+                                    <li>
+                                    <a href="#" class="mongolian">
+                                        <p>Монгол хэл
+                                        </p>
+                                    </a>
+                                    </li>
+                                </ul>
+                                <span class="arrow"></span>
+                            </div>
+                    </li>
+                    <li class="site">
+                        <div>
+                            <p>
+                                패밀리사이트
+                            </p>
+                        </div>
+                        <div class="fArrow"></div>
+                        <div class="bg"></div>
+                        <div class="hideList">   
+                                <ul class="pList">
+                                    <li class="title">
+                                        <h3>패밀리사이트</h3>
+                                    </li>
+                                    <li>
+                                        <ul class="secList">
+                                            <li>
+                                                · 우리금융지주
+                                            </li>
+                                            <li>
+                                                · 우리에프아이에스
+                                            </li>
+                                            <li>
+                                                · 우리신용정보
+                                            </li>
+                                            <li>
+                                                · 우리다문화장학재단
+                                            </li>
+                                            <li>
+                                                · 우리펀드서비스
+                                            </li>
+                                            <li>
+                                                · 우리미소금융재단
+                                            </li>
+                                            <li>
+                                                · 우리금융경영연구소
+                                            </li>
+                                            <li>
+                                                · 우리종합금융
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <span class="arrow"></span>
+                            </div>
+                    </li>
+                    <li class="linkList">
+                        <div class="link1"></div>
+                        <div class="link2"></div>
+                        <div class="link3"></div>
+                        <div class="link4"></div>
+                        <div class="link5"></div>
+                        <div class="link6"></div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="footerSe2">
+            <div class="footWrap2">
+                <ul>
+                    <li class="logo">
+                        <span class="logoImg">
+                            <a href="#">
+                                <img src="https://simg.wooribank.com/img/common/footer/icon_woori.gif" alt="">
+                            </a>
+                        </span>
+                        <div class="bank">은행소개</div>
+                        <div class="work">영업점안내</div>
+                        <div class="clime">고객광장</div>
+                        <div class="personIp"> 개인정보처리방침</div>
+                        <div class="personSave">개인신용정보관리보호</div>
+                        <div class="accident">사고신고</div>
+                        <div class="electric">전자민원접수</div>
+                        <div class="saveItem">보호금융상품등록부</div>
+                        <div class="itemHold">상품공시실</div>
+                        <div class="secu">보안센터</div>
+                        <div class="web">웹접근성 이용안내</div>
+                        <span class="copy">COPYRIGHTS WOORI BANK. ALL RIGHTS RESERVED.</span>
+                    </li>
+                    <li class="footerImg">
+                        <a href="#" title="국가 공인 인증기관: 웹와치" class="mark1">
+                            <div class="ex">
+                                2019 웹 접근성 <br> 우수사이트 </div>
+                        </a>
+                        
+                        <a href="#" class="mark2">
+                            <div class="ex2">
+                                    2019 고객감동경영대산 <br>종합대상 12년 연속 수상
+                            </div>
+                        </a>
+                       
+                        <a href="#" class="mark3">
+                            <div class="ex2">
+                                    2018 The Banker誌 
+                                    <br>한국 최우수은행 수상
+                            </div>
+                        </a>
+                        
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+
+   
+    <script src="woori.js"></script>
+</body>
+</html>
